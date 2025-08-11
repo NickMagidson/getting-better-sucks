@@ -1,0 +1,342 @@
+/* Navbar Styles - Extracted from Webflow CSS */
+/* Preserved original Webflow classes for exact visual match */
+
+/* CSS Variables from Webflow */
+:root {
+  --colors--site-background: #f8f6e8;
+  --fonts--heading-font: Lora, serif;
+  --colors--headings: #312b24;
+  --fonts--paragraph: "42dot Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --colors--paragraph: #312b24cc;
+  --colors--accent: #d1ea67;
+  --colors--element-stroke-color: #312b2424;
+  --colors--dark-sections: #1a312a;
+  --colors--element-color: #fff3;
+  --colors--accent-opacity-low: #d1ea671a;
+}
+
+/* Core Webflow Navigation Styles */
+.w-nav {
+  position: relative;
+  background: #dddddd;
+  z-index: 1000;
+}
+
+.w-nav:before, .w-nav:after {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2;
+}
+
+.w-nav:after {
+  clear: both;
+}
+
+.w-nav-brand {
+  position: relative;
+  float: left;
+  text-decoration: none;
+  color: #333333;
+}
+
+.w-nav-link {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  color: #222222;
+  padding: 20px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.w-nav-link.w--current {
+  color: #0082f3;
+}
+
+.w-nav-menu {
+  position: relative;
+  float: right;
+}
+
+/* Custom Navbar Styles */
+.navbar {
+  z-index: 50;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: #f8f6e8cc;
+  border-bottom: 1px solid #ffffff29;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  display: flex;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.container.navbar-container {
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  width: 100%;
+}
+
+.navbar-holder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.navbar-container, .nav-menu-link-holder {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.nav-menu-link-container {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+
+.brand {
+  position: relative;
+  float: left;
+  text-decoration: none;
+  color: #333333;
+}
+
+.brand-image {
+  width: 100%;
+}
+
+.nav-menu {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 40px;
+  display: flex;
+}
+
+.nav-links {
+  grid-column-gap: 6px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 6px 12px;
+  display: flex;
+}
+
+.nav-link {
+  font-family: var(--fonts--paragraph, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  color: var(--colors--paragraph, #666666);
+  border-bottom: 3px solid #fff0;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px 4px;
+  font-size: 15px;
+  font-weight: 400;
+  transition: background-color .6s;
+  display: flex;
+  bottom: -1px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.nav-link.w--current {
+  color: var(--colors--headings, #222222);
+  border-radius: 20px;
+  font-weight: 800;
+}
+
+.nav-button-holder {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  background-color: var(--colors--dark-sections, #222222);
+  font-family: var(--fonts--paragraph, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  color: var(--colors--site-background, #ffffff);
+  text-align: center;
+  letter-spacing: .3px;
+  border-radius: 8px;
+  padding: 13px 24px;
+  font-size: 14px;
+  font-weight: 400;
+  transition: transform .325s cubic-bezier(.175, .885, .32, 1.275), background-position .25s, background-color .45s;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile Menu Button */
+.menu-button {
+  position: relative;
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.w-icon-nav-menu {
+  width: 20px;
+  height: 20px;
+}
+
+.w-icon-nav-menu:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  box-shadow: 0 6px 0 #333, 0 12px 0 #333;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 991px) {
+  .navbar-container {
+    max-width: 728px;
+  }
+
+  .nav-menu {
+    position: static;
+  }
+
+  .nav-menu-link-holder {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #f8f6e8;
+    border-top: 1px solid #ffffff29;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .nav-menu.w--open .nav-menu-link-holder {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-menu-link-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .nav-menu {
+    padding-left: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .menu-button {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  /* Ensure the navbar container doesn't overflow */
+  .navbar-holder {
+    position: relative;
+    overflow: visible;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container.navbar-container {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .nav-menu-link-holder {
+    padding: 15px;
+    left: 1em;
+    right: 1em;
+    width: auto;
+  }
+
+  .brand {
+    max-width: 120px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .container.navbar-container {
+    max-width: none;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .nav-menu-link-holder {
+    left: 0.75em;
+    right: 0.75em;
+    padding: 12px;
+  }
+
+  .brand {
+    max-width: 100px;
+  }
+
+  .nav-link {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .nav-button-holder {
+    margin-top: 10px;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,11 +1,15 @@
-import Hero from "@/Hero";
-import Navbar from "./Navbar";
+import FeaturesGrid from "@/components/FeaturesGrid";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
+      <FeaturesGrid />
+      <Footer />
     </>
   );
 }
