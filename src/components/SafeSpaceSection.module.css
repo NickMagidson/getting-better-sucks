@@ -1,0 +1,41 @@
+/* SafeSpaceSection.module.css */
+/* Additional styles specific to SafeSpaceSection component */
+/* Most styles are inherited from webflow.css */
+
+.fadeInElement {
+  opacity: 0;
+  transform: translate3d(0, 45px, 0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fadeInElement.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.featureImage {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.featureImage.visible {
+  opacity: 1;
+}
+
+/* Ensure images maintain proper positioning */
+.feature-image-container {
+  position: relative;
+}
+
+.feature-image-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-image-full._02 {
+  z-index: 1;
+}

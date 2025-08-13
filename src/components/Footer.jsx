@@ -69,7 +69,7 @@ export default function Footer() {
           <Image
             alt="Peaceful background for call to action"
             className="background-image"
-            src="/684476a162d43bd845708237_image.avif"
+            src="/hans-isaacson-FNS6mP4fsIs-unsplash.jpg"
             width={2839}
             height={1600}
             sizes="(max-width: 2839px) 100vw, 2839px"
