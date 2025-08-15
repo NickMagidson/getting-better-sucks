@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import './navbar.css';
 
@@ -9,6 +10,7 @@ import './navbar.css';
 // Original classes preserved with minor React adjustments
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -30,8 +32,8 @@ export default function Navbar() {
             {/* Brand/Logo - converted href to Link component */}
             <Link 
               href="/" 
-              className="brand w-nav-brand w--current"
-              aria-current="page"
+              className={`brand w-nav-brand ${pathname === '/' ? 'w--current' : ''}`}
+              aria-current={pathname === '/' ? 'page' : undefined}
             >
               <Image 
                 src="/logo.svg" 
@@ -54,26 +56,29 @@ export default function Navbar() {
                     {/* Navigation Links - converted to Next.js Link components */}
                     <Link 
                       href="/" 
-                      className="nav-link w-nav-link w--current"
-                      aria-current="page"
+                      className={`nav-link w-nav-link ${pathname === '/' ? 'w--current' : ''}`}
+                      aria-current={pathname === '/' ? 'page' : undefined}
                     >
                       Home
                     </Link>
-                    <Link 
+                    {/* <Link 
                       href="/about" 
-                      className="nav-link w-nav-link"
+                      className={`nav-link w-nav-link ${pathname === '/about' ? 'w--current' : ''}`}
+                      aria-current={pathname === '/about' ? 'page' : undefined}
                     >
                       About
-                    </Link>
+                    </Link> */}
                     <Link 
                       href="/blog" 
-                      className="nav-link w-nav-link"
+                      className={`nav-link w-nav-link ${pathname === '/blog' ? 'w--current' : ''}`}
+                      aria-current={pathname === '/blog' ? 'page' : undefined}
                     >
                       Blog
                     </Link>
                     <Link 
                       href="/contact" 
-                      className="nav-link w-nav-link"
+                      className={`nav-link w-nav-link ${pathname === '/contact' ? 'w--current' : ''}`}
+                      aria-current={pathname === '/contact' ? 'page' : undefined}
                     >
                       Contact
                     </Link>
