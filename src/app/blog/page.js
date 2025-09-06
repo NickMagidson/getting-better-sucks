@@ -1,3 +1,8 @@
+import BlogHero from '../../components/BlogHero';
+import BlogGrid from '../../components/BlogGrid';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+
 // Force dynamic rendering to avoid build-time API calls
 export const dynamic = 'force-dynamic';
 
@@ -17,9 +22,11 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <div>
-      <h1>Blog Page</h1>
-      <p>Blog content will be restored after fixing build issues.</p>
-    </div>
+    <>
+      <Navbar />
+      <BlogHero />
+      <BlogGrid />
+      <Footer />
+    </>
   );
 }

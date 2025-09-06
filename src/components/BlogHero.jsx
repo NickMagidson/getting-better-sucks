@@ -79,7 +79,7 @@ export default function BlogHero() {
             <div className="blog-grid-twos-wrapper w-dyn-list">
               <div className="content w-dyn-items" role="list">
                 <div className="blog-grid-twos-item w-dyn-item" role="listitem">
-                  <Link className="blog-item hoziontal w-inline-block" href="/post/business-consulting-101">
+                  <Link className="blog-item hoziontal w-inline-block" href="/blog/business-consulting-101">
                     <Image 
                       alt="Business consulting guide illustration" 
                       className="blog-thumbnail horizontal" 
