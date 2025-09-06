@@ -1,3 +1,9 @@
+/* Font variables using Next.js fonts */
+:root {
+  --fonts--heading-font: inherit; /* Will use Lora from layout */
+  --fonts--paragraph: inherit; /* Will use Lora from layout */
+}
+
 /* Fix for Hero section vertical stretching */
 /* .section {
   padding: 80px 0;
