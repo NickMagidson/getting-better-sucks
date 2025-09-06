@@ -61,13 +61,13 @@ export default function Navbar() {
                     >
                       Home
                     </Link>
-                    {/* <Link 
+                    <Link 
                       href="/about" 
                       className={`nav-link w-nav-link ${pathname === '/about' ? 'w--current' : ''}`}
                       aria-current={pathname === '/about' ? 'page' : undefined}
                     >
                       About
-                    </Link> */}
+                    </Link>
                     <Link 
                       href="/blog" 
                       className={`nav-link w-nav-link ${pathname === '/blog' ? 'w--current' : ''}`}
